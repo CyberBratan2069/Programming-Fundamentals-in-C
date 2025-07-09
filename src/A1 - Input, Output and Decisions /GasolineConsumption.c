@@ -1,6 +1,8 @@
 /**********************************************************************************************************************/
-/** @Autor Christian Reiswich                                                                                        **/
-/** Created on 7/9/25                                                                                                **/
+/** @Autor Christian Reiswich
+ * Created on 7/9/25
+ * Compiled with gcc GasolineConsumption.c -o GasolineConsumption
+ */
 /**********************************************************************************************************************/
 
 
@@ -62,6 +64,7 @@ int main(void) {
         consumption = amountOfPetrolFilled / (distanceTraveled/100);
         printf("%.2f l/km\n", consumption);
     }
+
 
     return 0;
 }
