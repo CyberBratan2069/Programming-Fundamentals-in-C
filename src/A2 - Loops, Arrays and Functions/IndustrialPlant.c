@@ -27,6 +27,7 @@ int datInput(float fValues[]) {
     return countedValues;
 }
 
+
 float datMean(float fValues[], int iNumber) {
     float addAllValues = 0;
 
@@ -37,16 +38,18 @@ float datMean(float fValues[], int iNumber) {
     return addAllValues / iNumber;
 }
 
+
 float datStandart(float fValues[], int iNumber, float fMean) {
     float variance = 0;
     for(int i=0; i< iNumber; i++) {
         variance += (fValues[i] - fMean) * (fValues[i] - fMean);
     }
-    variance /= iNumber;
+    variance /= (iNumber -1);
 
     float stddev = sqrt(variance);
     return stddev;
 }
+
 
 int main(void) {
 
