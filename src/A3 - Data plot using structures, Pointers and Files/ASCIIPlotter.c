@@ -1,17 +1,15 @@
-/**********************************************************************************************************************/
-/** @Autor Christian Reiswich
- * Created on 7/10/25
- * Compiled with gcc ASCIIPlotter.c -o ASCIIPlotter
- */
-/**********************************************************************************************************************/
+/***********************************************************************************************************************
+ * @Autor Christian Reiswich
+ * @Created on 7/10/25
+ * @Compiled with gcc ASCIIPlotter.c -o ASCIIPlotter
+ **********************************************************************************************************************/
+
 
 #include <stdio.h>
 
 #define HEIGHT_LENGTH 10
 #define WIDTH_LENGTH  10
 #define MAX_POINTS    100
-#define TRUE  1
-#define FALSE 0
 
 
 struct point {
@@ -56,8 +54,8 @@ void drawGraph(struct point points[], int enteredPoints) {
     printf("\n** ASCII Plotter **\n");
 
     for(int y=0; y<= HEIGHT_LENGTH; y++) {
-        if     (y == 0 ) printf("10|");
-        else if(y == 5 ) printf("05|");
+        if     (y ==  0) printf("10|");
+        else if(y ==  5) printf("05|");
         else if(y == 10) printf("00|");
         else             printf("  |");
 

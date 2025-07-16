@@ -1,15 +1,15 @@
-/**********************************************************************************************************************/
-/** @Autor Christian Reiswich
- * Created on 7/9/25
- * Compiled with gcc GasolineConsumption.c -o GasolineConsumption
- */
-/**********************************************************************************************************************/
+/***********************************************************************************************************************
+ * @Autor Christian Reiswich
+ * @Created on 7/9/25
+ * @Compiled with gcc GasolineConsumption.c -o GasolineConsumption
+ **********************************************************************************************************************/
 
 
 #include <stdio.h>
 
 #define USMILE   1.6093
 #define USGALLON 3.785
+
 
 int main(void) {
 
@@ -59,10 +59,12 @@ int main(void) {
         printf("-> distance traveled: ");
         distanceTraveled = odometerReadingCURRENTRefueling - odometerReadingLASTRefueling;
         printf("%.2f km\n", distanceTraveled);
+        printf("%.2f miles\n", distanceTraveled * USMILE);
 
         printf("-> consumption: ");
         consumption = amountOfPetrolFilled / (distanceTraveled/100);
         printf("%.2f l/km\n", consumption);
+        printf("%.2f gal/miles\n", consumption * USGALLON);
     }
 
 
