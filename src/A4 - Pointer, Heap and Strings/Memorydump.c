@@ -58,9 +58,9 @@ int main(int argc, char **argv) {
     }
 
     char *input = argv[1];
-    char cin = argv[2][0];
-    char cout = argv[3][0];
-    int lines = atoi(argv[4]);
+    char cin    = argv[2][0];
+    char cout   = argv[3][0];
+    int lines   = atoi(argv[4]);
 
 
     char *copy = malloc(strlen(input) + 1);
