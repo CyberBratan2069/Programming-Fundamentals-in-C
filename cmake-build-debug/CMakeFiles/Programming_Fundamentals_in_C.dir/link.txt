@@ -1,0 +1,1 @@
+/usr/bin/cc -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/Programming_Fundamentals_in_C.dir/src/A5_–_Modular_Programming_und_System_Tools/main.c.o CMakeFiles/Programming_Fundamentals_in_C.dir/src/A5_–_Modular_Programming_und_System_Tools/tools.c.o -o Programming_Fundamentals_in_C
