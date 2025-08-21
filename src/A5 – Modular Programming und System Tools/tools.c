@@ -11,6 +11,7 @@
 #include <ctype.h>
 
 
+
 char *readFile(char *filename) {
     FILE *file = fopen(filename, "r");
     if(!file) {
@@ -48,30 +49,28 @@ int countLines(char *string) {
 
 
 int countWords(char *text) {
-    char *specialCharacters = "!§$%&/()=?`*'_:;¡¶¢[]|{}≠¿'±‘–…∞´+#-.,";
-    char *string = malloc(1);
-
-    stringArray = NULL;
+    char *word = malloc(1);
+    char **stringArray = NULL;
 
     int arraySize = sizeof(stringArray) / sizeof(stringArray[0]);
 
-    string[0] = '\0';
+    word[0] = '\0';
 
     while(*text != '\0') {
-        string = realloc(string, strlen(string) + 1);
-        string[strlen(string)] = *text;
+        word = realloc(word, strlen(word) + 1);
+        word[strlen(word)] = *text;
         text++;
 
-        if(isspace(*text) || strchr(specialCharacters, *text)) {
-            string[strlen(string) + 1] = '\0';
+        if(isspace(*text) || ispunct(*text)) {
+            word[strlen(word) + 1] = '\0';
             stringArray = realloc(stringArray, (arraySize + 1) * sizeof *stringArray);
 
-            if(!isalpha((string[strlen(string) - 1]))) {
+            if(!isalpha((word[strlen(word) - 1]))) {
                 text++;
             }
 
             else {
-                stringArray[arraySize] = strdup(string);
+                stringArray[arraySize] = strdup(word);
                 arraySize++;
                 text++;
             }
@@ -145,28 +144,13 @@ void filterFile(char *infile, char *outfile, char c) {
     while(*infile != '\0') {
         if(*infile == c) {
             while(isalpha(*infile)) {
-                *outfile = *infile;
+                fwrite(infile, 1, 1, out);
                 infile++;
-                outfile++;
             }
+            fwrite(" ", 1, 1, out);
         }
         else infile++;
     }
 
     fclose(out);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,10 +1,13 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11
 
-all: program
+TARGET = tool
+SRCS = main.c tools.c
 
-program: main.c tools.c tools.h
-	$(CC) $(CFLAGS) -o program main.c tools.c
+$(TARGET): $(SRCS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRCS)
 
 clean:
-	rm -f program *.o
+	rm -f $(TARGET)
+
+.PHONY: clean
